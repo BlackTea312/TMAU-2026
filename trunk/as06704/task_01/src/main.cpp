@@ -1,11 +1,8 @@
 #define NOMINMAX
-
 #include "csv_writer.h"
 #include "input_signal.h"
 #include "model.h"
 #include "simulator.h"
-
-#include <windows.h>
 #include <cstdlib>
 #include <filesystem>
 #include <iostream>
@@ -14,6 +11,9 @@
 #include <string>
 #include <vector>
 
+#ifdef _WIN32
+#include <windows.h>
+#endif
 namespace {
 
 template <typename T>

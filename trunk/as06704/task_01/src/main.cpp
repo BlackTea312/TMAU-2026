@@ -45,9 +45,8 @@ namespace {
         int maxValue
     ) {
         while (true) {
-            const int choice = readNumber<int>(prompt);
 
-            if (choice >= minValue && choice <= maxValue) {
+            if (const int choice = readNumber<int>(prompt); choice >= minValue && choice <= maxValue) {
                 return choice;
             }
 
@@ -176,7 +175,7 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    const std::size_t steps =
+    const auto steps =
         static_cast<std::size_t>(enteredSteps);
 
     const double initialY = readNumber<double>(
@@ -268,9 +267,7 @@ int main(int argc, char* argv[]) {
             << dt << '\n';
     }
 
-    const std::string stability = model->stabilityInfo();
-
-    if (!stability.empty()) {
+    if (const std::string stability = model->stabilityInfo();!stability.empty()) {
         std::cout << '\n' << stability << '\n';
     }
 

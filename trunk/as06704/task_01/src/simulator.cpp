@@ -8,8 +8,8 @@ std::vector<Sample> Simulator::run(const Model& model,
                                    std::size_t steps,
                                    double initialY,
                                    double dt) const {
-    std::vector<double> u(steps + 1, 0.0);
-    std::vector<double> y(steps + 1, 0.0);
+    std::vector u(steps + 1, 0.0);
+    std::vector y(steps + 1, 0.0);
     std::vector<Sample> samples;
     samples.reserve(steps + 1);
 
